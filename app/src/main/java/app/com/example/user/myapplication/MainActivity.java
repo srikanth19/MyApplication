@@ -1,8 +1,6 @@
 package app.com.example.user.myapplication;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -20,13 +18,22 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        
+
         final TextView firsttextview=(TextView)findViewById(R.id.text);
-        Button mybutton=(Button)findViewById(R.id.button);
+        final Button mybutton=(Button)findViewById(R.id.button);
+        Button button2=(Button)findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firsttextview.setText("Hello SRI");
+                mybutton.setText("CLICK BUTTON");
+            }
+        });
         mybutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 firsttextview.setText("Hello World");
+                mybutton.setText("You clicked");
             }
         });
 
